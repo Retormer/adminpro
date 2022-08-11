@@ -21,14 +21,7 @@
     "@angular/router": "~14.1.2",
     "chart.js": "^3.9.1",
     "ng2-charts": "^4.0.0",
-    "@angular/animations": "~9.1.11",
-    "@angular/common": "~9.1.11",
-    "@angular/compiler": "~9.1.11",
-    "@angular/core": "^9.1.11",
-    "@angular/forms": "~9.1.11",
-    "@angular/platform-browser": "~9.1.11",
-    "@angular/platform-browser-dynamic": "~9.1.11",
-    "@angular/router": "~9.1.11",
+    
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.11.7"
@@ -37,7 +30,6 @@
     "@angular-devkit/build-angular": "^14.1.2",
     "@angular/cli": "~9.1.9",
     "@angular/compiler-cli": "~14.1.2",
-    "@angular/compiler-cli": "~9.1.11",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
