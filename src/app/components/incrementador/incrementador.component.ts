@@ -17,11 +17,14 @@ export class IncrementadorComponent implements OnInit {
 
   @Output('valor') valorSalida: EventEmitter<number> = new EventEmitter();
 
-  @HostListener('blur', ['$event.target.value'])
-  onBlur(value) {
-    if(value > 100) {
+  @HostListener('keyup', ['$event.target.value'])
+  onKeyUpEvent(value) {
+    if(value >= 100) {
       this.valorSalida.emit(100);
-      return this.progreso = 100;
+      return value = 100;
+    } else if (value == "") {
+      this.valorSalida.emit(0);
+      return value = 0;
     }
   }
   cambiarValor ( valor: number) {
@@ -39,9 +42,7 @@ export class IncrementadorComponent implements OnInit {
     this.valorSalida.emit(this.progreso);
   } 
   onChange ( nuevoValor: number ){
-    if (nuevoValor > 100) {
-      this.progreso = 100;
-    } else if (nuevoValor < 0) {
+    if (nuevoValor < 0) {
       this.progreso = 0;
     } else {
       this.progreso = nuevoValor;

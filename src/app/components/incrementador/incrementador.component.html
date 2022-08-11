@@ -11,7 +11,7 @@
            [ngClass]="{'is-invalid': progreso > 100 || progreso < 0}"
            placeholder="Progreso" 
            (ngModelChange)="onChange( $event )"
-           (blur)="onBlur ( $event.target.value )"
+           ((keyup))="onKeyUpEvent ( $event.target.value )"
            [(ngModel)]="progreso">
     <span class="input-group-btn">
         <button (click)="cambiarValor(+5)"
