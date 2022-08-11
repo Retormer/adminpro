@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit } from "@angular/core";
+import { Component, Input, Output, EventEmitter, OnInit, HostListener } from "@angular/core";
 
 @Component({
   selector: 'app-incrementador',
@@ -17,10 +17,19 @@ export class IncrementadorComponent implements OnInit {
 
   @Output('valor') valorSalida: EventEmitter<number> = new EventEmitter();
 
-  cambiarValor ( valor: number) {
-    if (this.progreso >= 100 && valor >= 0) {
+  @HostListener('blur', ['$event.target.value'])
+  onBlur(value) {
+    if(value > 100) {
       this.valorSalida.emit(100);
       return this.progreso = 100;
+    }
+  }
+  cambiarValor ( valor: number) {
+    if (this.progreso >= 100) {
+      if(valor >= 0 || this.progreso > 100) {
+        this.valorSalida.emit(100);
+        return this.progreso = 100;
+      } 
     }
     if (this.progreso <= 0 && valor < 0) {
       this.valorSalida.emit(0);
