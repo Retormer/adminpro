@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from "@angular/forms";
-import { ChartsModule } from 'ng2-charts';
-import { Chart } from 'chart.js';
+import { NgChartsModule } from 'ng2-charts';
 import { AppRoutingModule } from '../app-routing.module';
 //Modulos
 import { SharedModule } from '../shared/shared.module';
@@ -31,8 +30,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   imports: [
     CommonModule,
     FormsModule,
-    ChartsModule,
-    Chart,
+    NgChartsModule,
     SharedModule,
     AppRoutingModule,
     ComponentsModule,
